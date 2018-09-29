@@ -4,11 +4,11 @@
 
 ### Feature Definitions
 
-[Ability to create user "student" account]()
-[Ability to create non-profit organization account]()
-[Ability to search for volunteer opportunities]()
-[Ability to log time spent volunteering]()
-[Ability to generate a "certificate" of time spent volunteering]()
+- [Ability to create user "student" account]()
+- [Ability to create non-profit organization account]()
+- [Ability to search for volunteer opportunities]()
+- [Ability to log time spent volunteering]()
+- [Ability to generate a "certificate" of time spent volunteering]()
 
 ### Sitemap
 
