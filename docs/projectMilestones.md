@@ -4,8 +4,8 @@
 
 ### Initial Pitch
 
-[Presentation Video](https://www.youtube.com/watch?v=ANRl7l7Abr0)
-[Presentation File](SheremetyevaFatima_Pitch_Presentation.key)
+- [Presentation Video](https://www.youtube.com/watch?v=ANRl7l7Abr0)
+- [Presentation File](SheremetyevaFatima_Pitch_Presentation.key)
 
 ### Initial Project Spec
 
