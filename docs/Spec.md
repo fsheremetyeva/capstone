@@ -38,21 +38,24 @@ This application is solely a web-site/web-application. Given the increasing use 
 ### Technical Requirements
 
 Technical Requirement - PHP
+
 The site will be predominantly in PHP. Most of my syntax is expected to be compatible going back to PHP 5.2 but, of course, the newer versions of PHP on web servers the better with PHP7 thanks to much better performance.
 
 Define the server software and hardware, virtualized or not, that your application requires to run. These should be in a format of Title: Brief description of my usage. If a feature as defined in the issues requires a specific technology, that issue should cite this as well.
 
 Technical Requirement - MySQL
+
 A MySQL web server is needed for the database operations whether it be MySQL itself or an alternative like MariaDB.
 
 Technical Requirement - Web server
+
 A web server like Apache or nginx is required for handling the HTTP(S) traffic.
 
 ### Programming Languages
 
-[PHP](http://php.net/manual/en/)
-[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[MySQL](https://www.mysql.com/)
+- [PHP](http://php.net/manual/en/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [MySQL](https://www.mysql.com/)
 
 ### Integrations
 
