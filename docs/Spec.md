@@ -46,7 +46,7 @@ Technical Requirement - MySQL
 A MySQL web server is needed for the database operations whether it be MySQL itself or an alternative like MariaDB.
 
 Technical Requirement - Web server
-A web server like Apache or Nginx is required for handling the HTTP(S) traffic.
+A web server like Apache or nginx is required for handling the HTTP(S) traffic.
 
 ### Programming Languages
 
