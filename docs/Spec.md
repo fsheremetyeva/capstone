@@ -4,11 +4,15 @@
 
 ### Feature Definitions
 
-- [Ability to create user "student" account]()
-- [Ability to create non-profit organization account]()
-- [Ability to search for volunteer opportunities]()
-- [Ability to log time spent volunteering]()
-- [Ability to generate a "certificate" of time spent volunteering]()
+[Filter of GitHub Features](https://github.com/fsheremetyeva/capstone/labels/Feature)
+
+- Ability to create user volunteer account
+- Ability to create non-profit organization account
+- Ability to search for volunteer opportunities
+- Initial Dashboard for volunteer account
+- Initial Dashboard for non-profit account
+- Ability to log time spent volunteering
+- Ability to generate a "certificate" of time spent volunteering
 
 ### Sitemap
 
