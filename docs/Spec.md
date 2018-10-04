@@ -7,20 +7,66 @@
 [Filter of GitHub Features](https://github.com/fsheremetyeva/capstone/labels/Feature)
 
 - Ability to create user volunteer account
+  - As a new site visitor I'm able to create a volunteer account and have this information stored on the service's database.
+  - [ ] Volunteer Registration / Sign Up Form
+    - [ ] Name
+    - [ ] Email
+    - [ ] Password     
 - Ability to create non-profit organization account
+  - As a non-profit organization we're able to join your service and organize our volunteer needs.
+  - [ ] Organization Registration / Sign Up Form
+    - [ ] Name
+    - [ ] Email
+    - [ ] Password    
 - Ability to search for volunteer opportunities
-- Initial Dashboard for volunteer account
+  - As a user seeking volunteer work, I can find volunteer opportunities fitting specific criteria:
+    - [ ] Search by Region
+    - [ ] Search by Organization
+- Dashboard for volunteer account
+  A user is able to add/edit and delete information:
+
+  - [ ] Update email
+  - [ ] Update Password
+  - [ ] Add/Modify/Remove Capabilities
+  - [ ] Add new contact information
+  - [ ] Remove contact information
+  - [ ] Modify contact information
+  - [ ] Volunteer History
+
+  Other Features:
+  - [ ] Pie chart summarizing volunteer activity
+  - [ ] Generate Certificate
+
 - Initial Dashboard for non-profit account
+  As an organization I am able to create and manage volunteer listings:
+
+  I can add or update volunteer opportunities:
+
+  - [ ] Add/Edit Volunteer Opportunity
+  - [ ] Name
+  - [ ] Location
+  - [ ] Date(s)
+  - [ ] Times
+  - [ ] Description
+  - [ ] Images
+
+  - [ ] Delete Opportunity
+
 - Ability to log time spent volunteering
+
+  As a volunteer, I can claim time spent volunteering.
+
 - Ability to generate a "certificate" of time spent volunteering
+
+  As a volunteer, I can print and/or share earned certificates as proof of volunteer work.
 
 ### Sitemap
 
 - Homepage
 - Log-In page
 - Registration page
-- Student profile
-- Non-profit organization profile
+- Student Dashboard
+- Non-profit organization Dashboard
 - Search page
 
 ### Interface
@@ -29,7 +75,60 @@
 
 ### Information Architecture
 
-''Using your sitemap as a base structure, use this section to house ALL of your text content. This is a great place to develop all of the content that will appear on your pages, components, and sub sections outside of the constraints of code. In MVC we separate views from controllers and models, while in the Information Architecture section of your project spec you will separate your content from your code.''
+- Homepage
+
+  - Search for volunteer opportunities
+  - Learn more about the application
+
+- Log-In page
+
+  - Login as a user and get access to the Volunteer Dashboard
+  - Login as an organization and get access to the Organization Dashboard
+
+- Registration page
+
+  - Register as a volunteer
+  - Register as an organizations
+
+- Volunteer Dashboard
+
+  - Add/Edit/Delete personal information:
+    - Name
+    - Email
+    - Zip code
+    - Association
+    - Image
+
+  - Add a new volunteer record:
+    - Date
+    - Organization Name
+    - Time
+    - Notes
+
+  - View volunteer history
+  - View summary of volunteer data in a graph/pie chart
+  - Generate a certificate
+
+
+- Non-profit organization Dashboard
+
+  - Add/Edit Volunteer Opportunity
+    - Name
+    - Location
+    - Date(s)
+    - Times
+    - Description
+    - Images
+
+  - Delete Opportunity
+
+- Search page
+
+  - View available listings
+    - Image
+    - Organization Name
+    - Excerpt of the volunteer Opportunity
+    - "Learn More" button
 
 ### Browser Support
 
@@ -44,8 +143,6 @@ This application is solely a web-site/web-application. Given the increasing use 
 Technical Requirement - PHP
 
 The site will be predominantly in PHP. Most of my syntax is expected to be compatible going back to PHP 5.2 but, of course, the newer versions of PHP on web servers the better with PHP7 thanks to much better performance.
-
-Define the server software and hardware, virtualized or not, that your application requires to run. These should be in a format of Title: Brief description of my usage. If a feature as defined in the issues requires a specific technology, that issue should cite this as well.
 
 Technical Requirement - MySQL
 
