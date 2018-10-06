@@ -1,14 +1,14 @@
 <?
 class organization{
   public function __construct($parent){
-
-    $this->db = $parent->db;
+    $this->db = $parent;
 
   }
 
   public function select($sql, $value=array()){
     $this->sql = $this->db->prepare($sql);
     $result = $this->sql->execute($value);
+    if(!$result) print_r($this->sql->errorInfo());
     $data = $this->sql->fetchAll();
     return $data;
   }
@@ -16,6 +16,8 @@ class organization{
   public function add($sql, $value=array()){
     $this->sql = $this->db->prepare($sql);
     $result = $this->sql->execute($value);
+    if(!$result) print_r($this->db->errorInfo());
+    return $result;
   }
   public function delete($sql, $value=array()){
     $this->sql = $this->db->prepare($sql);
@@ -27,6 +29,8 @@ class organization{
     $result = $this->sql->execute($value);
 
   }
-
+  public function getError(){
+    return implode(' ', $this->db->errorInfo());
+  }
 }
 ?>

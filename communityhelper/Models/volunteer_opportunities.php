@@ -2,7 +2,7 @@
 class volunteer_opportunities{
   public function __construct($parent){
 
-    $this->db = $parent->db;
+    $this->db = $parent;
 
   }
 
