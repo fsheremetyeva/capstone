@@ -23,12 +23,14 @@ class CHController_login{
         exit;
       }
       else if(isset($x[0]['name'])){
-        // Valid user, proceed with setting up session authentication handling
+        // Valid user, proceed with setting up session authentication
         $_SESSION['id'] = $x[0]['id'];
         $_SESSION['email'] = $x[0]['email'];
         $_SESSION['name'] = $x[0]['name'];
+        $_SESSION['zip'] = $x[0]['zip'];
         $_SESSION['type'] = $type;
-        echo 'welcome back ' . $_SESSION['name'];
+        //echo 'welcome back ' . $_SESSION['name'];
+        CHController::redirectPage('dashboard');
       }
     }
     $data['title'] = 'Login';

@@ -16,6 +16,8 @@ class volunteer{
   public function add($sql, $value=array()){
     $this->sql = $this->db->prepare($sql);
     $result = $this->sql->execute($value);
+    if(!$result) return -1;
+    return $result;
   }
   public function delete($sql, $value=array()){
     $this->sql = $this->db->prepare($sql);

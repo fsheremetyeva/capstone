@@ -6,6 +6,11 @@ $config['dbuser'] = 'root';
 $config['dbpass'] = 'root';
 
 session_start();
+define('IS_LOGGED_IN', isset($_SESSION['id']) && isset($_SESSION['name']) && isset($_SESSION['email']) && isset($_SESSION['type']));
+
+// Make CONSTANT_URL so it's easy for linking/reference purposes
+define('CURRENT_URL', $_SERVER['REQUEST_URI']);
+define('URL_BASE', empty($_REQUEST['u']) ? $_SERVER['REQUEST_URI'] : dirname($_SERVER['REQUEST_URI']));
 
 class CHController{
 
@@ -14,6 +19,7 @@ class CHController{
     include('Views/' . $view . '.php');
   }
   public static function insertDataArrayFromPostForSQL($v){
+    // Reformat the array of $_POST values to check and then reformat for easy passing to PDO data
     $newArray = array();
     foreach($v as $w){
       $value = $_POST[$w];
@@ -27,6 +33,11 @@ class CHController{
 
     return $newArray;
   }
+  public static function redirectPage($page)
+  {
+    // Just a helper to redirect to the desired page
+    header('Location: ' . URL_BASE . '/' . $page);
+  }
   public static function getModel($model){
     // Load the model
     require_once('Models/' . $model . '.php');
@@ -35,9 +46,6 @@ class CHController{
     return new $model(self::$db);
   }
 }
-
-// Make CONSTANT_URL so it's easy for linking/reference purposes
-define('CURRENT_URL', $_SERVER['REQUEST_URI']);
 
 // Create the database connection
 CHController::$db = new PDO("mysql:dbname=".$config["dbname"].";",$config["dbuser"],$config["dbpass"]);

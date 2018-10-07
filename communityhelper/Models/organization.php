@@ -16,7 +16,7 @@ class organization{
   public function add($sql, $value=array()){
     $this->sql = $this->db->prepare($sql);
     $result = $this->sql->execute($value);
-    if(!$result) print_r($this->db->errorInfo());
+    if(!$result) return -1;
     return $result;
   }
   public function delete($sql, $value=array()){
