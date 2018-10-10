@@ -1,0 +1,163 @@
+
+body {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+/*
+Navbar
+*/
+.bg-light {
+    background-color: #fff !important;
+}
+#logo{
+  max-height:85px;
+}
+.navbar-light .navbar-nav .nav-link{
+  text-transform:uppercase;
+  color:#000;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+  color:#E67D2E;
+}
+.active{
+  color:#E67D2E;
+}
+/*
+Typography
+*/
+.display-4{
+  text-transform: uppercase;
+}
+.screen-reader-label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+h1{
+  color:#fff;
+  font-weight:700;
+}
+/*
+Buttons
+*/
+.btn-primary {
+    color: #fff;
+    background-color: #1B71B3;
+    border-color: #1B71B3;
+}
+.btn-secondary{
+  color: #fff;
+  background-color: #E67D2E;
+  border-color: #E67D2E;
+}
+/*
+Forms
+*/
+form{
+  margin-top:20px;
+}
+.dashboard-form input, .dashboard-form textarea{
+  border:none;
+}
+/*
+Colors
+*/
+.light{
+  color:#fff;
+}
+.dark{
+  color:#000;
+}
+.accent{
+  color:#E67D2E;
+}
+.primary{
+  color:#0E69AF;
+}
+/*
+Homepage
+*/
+.jumbotron{
+  background: url('../../Assets/Images/holding-hands.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 6rem 2rem;
+  text-align:center;
+}
+#jumbotron-search input{
+  width:50%;
+  max-width:400px;
+  background:rgba(255,255,255,0.5);
+}
+#jumbotron-search{
+  display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.volunteer-cta{
+  display:block;
+  background:url('../../Assets/Images/volunteer.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding:10rem 2rem;
+  text-align:center;
+  transition: transform .2s;
+}
+.nonprofit-cta{
+  display:block;
+  background:url('../../Assets/Images/non-profit.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  padding:10rem 2rem;
+  text-align:center;
+  transition: transform .2s;
+}
+.nonprofit-cta:hover, .volunteer-cta:hover{
+  text-decoration:none;
+  -webkit-transform: scale(1.02);
+     -ms-transform: scale(1.02);
+         transform: scale(1.02);
+
+}
+/*
+Dashboard
+*/
+img.user-avatar {
+  width:auto;
+  max-height:200px;
+  display:block;
+}
+/*
+Footer
+*/
+
+footer {
+    height: 80px;
+    padding-top:25px;
+    margin-top:20px;
+    bottom: 0;
+    width: 100%;
+    background:#E67D2E;
+    color:#fff;
+}
+
+@media(max-width:600px){
+  #jumbotron-search input{
+    width:80%;
+    max-width:200px;
+  }
+}
