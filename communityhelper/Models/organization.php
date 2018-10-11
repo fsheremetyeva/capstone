@@ -40,8 +40,7 @@ class organization{
     if(isset($image['tmp_name'])){
       $image_blob = file_get_contents($image['tmp_name']);
 
-      if(!empty($image_blob))
-      {
+      if(!empty($image_blob)){
       $finfo = new finfo(FILEINFO_MIME);
       $mime = $finfo->file($image['tmp_name']);
       $mime = substr($mime, 0, strpos($mime, ';'));
@@ -49,6 +48,28 @@ class organization{
     }
     }
     return $this->update('UPDATE organization SET name = :name, address = :address, zip = :zip, phone = :phone, description = :description WHERE id = :id', $fields);
+  }
+  public function update_opportunity($organization_id, $days, $title, $description, $opp_id){
+    $fields = array(
+      ':title' => $title,
+      ':description' => $description,
+      ':date' => $days,
+      ':organization_id' => $organization_id,
+      ':opp_id' => $opp_id
+      );
+    if(empty($days) && empty($title) && empty($description))
+      $x = CHController::getModel('organization')->add('DELETE FROM volunteer_opportunities WHERE organization_id = :organization_id AND id = :opp_id', array(':organization_id' => $organization_id, ':opp_id' => $opp_id));
+    else
+      $x = CHController::getModel('organization')->add('UPDATE volunteer_opportunities SET title = :title, description = :description, date = :date WHERE organization_id = :organization_id AND id = :opp_id', $fields);
+  }
+  public function add_new_opportunity($organization_id, $days, $title, $description){
+    $fields = array(
+      ':title' => $title,
+      ':description' => $description,
+      ':date' => $days,
+      ':organization_id' => $organization_id
+      );
+    $x = CHController::getModel('organization')->add('INSERT INTO volunteer_opportunities (title, date, description, organization_id) VALUES (:title, :date, :description, :organization_id)', $fields);
   }
   public function getError(){
     return implode(' ', $this->db->errorInfo());

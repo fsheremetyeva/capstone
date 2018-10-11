@@ -1,6 +1,5 @@
 <?
-class CHController_register_organization
-{
+class CHController_register_organization{
 
   public function page($route){
 

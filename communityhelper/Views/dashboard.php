@@ -19,20 +19,30 @@
           </div>
         </div>
         <div class="col-md-6 col-sm-12">
+          <?php if(isset($data['description'])) { ?>
           <div class="form-group">
             <label class="sr-only" for="description">Description:</label>
             <textarea name="description" id="description" placeholder="Description"><?php echo $data['description']; ?></textarea>
           </div>
+        <?php } ?>
+          <?php if(isset($data['association'])) { ?>
+          <div class="form-group">
+            <label class="sr-only" for="association">Association:</label>
+            <textarea name="association" id="association" placeholder="Association"><?php echo $data['association']; ?></textarea>
+          </div>
+        <?php } ?>
         </div>
       </div>
       <div class="form-group">
         <label class="sr-only" for="name">Name</label>
         <input type="text" name="name" id="name" placeholder="Name" value="<?php echo $data['name']; ?>">
       </div>
+      <?php if(isset($data['address'])) { ?>
       <div class="form-group">
         <label class="sr-only" for="address">Address</label>
         <input type="text" name="address" id="address" placeholder="Address" value="<?php echo $data['address']; ?>">
       </div>
+    <?php } ?>
       <div class="form-group">
         <label class="sr-only" for="zip">Zip</label>
         <input type="tel" name="zip" id="zip" placeholder="zip" value="<?php echo $data['zip']; ?>">
@@ -44,4 +54,3 @@
       <button type="submit" class="btn btn-primary">Update</button>
     </form>
   </div>
-<?php include('Views/footer.php'); ?>

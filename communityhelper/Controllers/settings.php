@@ -12,7 +12,11 @@ class CHController_settings{
       }
       else {
         echo 'Password updated';
-        CHController::getModel('organization')->update('UPDATE organization SET password = :pw WHERE id = :id', array(':id' => $_SESSION['id'], ':pw' => sha1($_POST['new_password'])));
+        if($_SESSION['type'] == 'organization')
+          CHController::getModel('organization')->update('UPDATE organization SET password = :pw WHERE id = :id', array(':id' => $_SESSION['id'], ':pw' => sha1($_POST['new_password'])));
+        else {
+          CHController::getModel('volunteer')->update('UPDATE volunteer SET password = :pw WHERE id = :id', array(':id' => $_SESSION['id'], ':pw' => sha1($_POST['new_password'])));
+        }
       }
     }
 
