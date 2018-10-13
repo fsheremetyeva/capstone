@@ -11,7 +11,8 @@
 
     <!-- Custom styles for this template -->
     <link href="<?php echo URL_BASE; ?>/Assets/css/main.css" rel="stylesheet">
-  </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 
   <body>
 

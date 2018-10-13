@@ -50,6 +50,27 @@ class volunteer{
     }
     return $this->update('UPDATE volunteer SET name = :name, zip = :zip, phone = :phone, association = :association WHERE id = :id', $fields);
   }
+  public function add_new_record($name_id, $date, $organization_id, $duration, $notes){
+    $fields = array(
+      ':notes' => $notes,
+      ':duration' => $duration,
+      ':date' => $date,
+      ':organization_id' => $organization_id,
+      ':name_id' => $name_id
+      );
+    $x = CHController::getModel('volunteer')->add('INSERT INTO volunteer_records (date, organization_id, name_id, duration, notes) VALUES (:date, :organization_id, :name_id, :duration, :notes)', $fields);
+  }
+  public function update_record($name_id, $date, $organization_id, $duration, $notes, $record_id){
+    $fields = array(
+      ':notes' => $notes,
+      ':duration' => $duration,
+      ':date' => $date,
+      ':organization_id' => $organization_id,
+      ':name_id' => $name_id,
+      ':record_id' => $record_id
+      );
+    return $this->update('UPDATE volunteer_records SET date = :date, organization_id = :organization_id, name_id = :name_id, duration = :duration, notes = :notes WHERE id = :record_id', $fields);
+  }
 
 }
 ?>

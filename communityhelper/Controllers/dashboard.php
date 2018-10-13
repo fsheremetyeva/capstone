@@ -24,7 +24,20 @@ class CHController_dashboard{
           }
 
       }
-  }
+  } else {
+    if(isset($_POST['duration']) && isset($_POST['notes'])){
+        for($i = 0; $i < count($_POST['date']) && $i < count($_POST['duration']); $i++){
+            if($_POST['record_id'][$i] == 'NEW' && !empty($_POST['date'][$i] && !empty($_POST['organization_id'][$i]))){
+              // INSERT NEW
+              CHController::getModel('volunteer')->add_new_record($_SESSION['id'], $_POST['date'][$i], $_POST['organization_id'][$i], $_POST['duration'][$i], $_POST['notes'][$i]);
+            }
+            else if ($_POST['opp_id'][$i] != 'NEW'){
+              CHController::getModel('volunteer')->update_record($_SESSION['id'], $_POST['date'][$i], $_POST['organization_id'][$i], $_POST['duration'][$i], $_POST['notes'][$i], $_POST['record_id'][$i]);
+            }
+            }
+        }
+
+    }
 
     $data = CHController::getDetailsOnCurrentUser();
     $data['title'] = 'Hello!';
@@ -35,6 +48,11 @@ class CHController_dashboard{
       $data = CHController::getModel('organization')->select('SELECT * FROM volunteer_opportunities WHERE organization_id = :id', array(':id' => $_SESSION['id']));
       CHController::viewHandler('listings_volunteer_opportunities', $data);
     }
+    else {
+      $data['records'] = CHController::getModel('volunteer')->select('SELECT * FROM volunteer_records WHERE name_id = :id', array(':id' => $_SESSION['id']));
+      $data['graph'] = CHController::getModel('volunteer')->select('SELECT (SELECT name FROM organization WHERE id = volunteer_records.organization_id LIMIT 1) AS organization, SUM(duration) AS time FROM volunteer_records WHERE name_id = :name_id GROUP BY organization_id', array(':name_id' => $_SESSION['id']));
+      $data['organizations'] = CHController::getModel('organization')->select('SELECT id, name FROM organization ORDER BY name ASC', array());
+      CHController::viewHandler('listings_volunteer_records', $data);    }
   }
 
 }

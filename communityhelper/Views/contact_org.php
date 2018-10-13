@@ -18,8 +18,6 @@
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <?php echo $data['description']; ?>
-            <?php echo '<p><a href="' . URL_BASE . '/contact_org/' . $data['id'] . '"><strong>Contact Organization</a></strong></p>';
-            ?>
           </div>
         </div>
       </div>
@@ -36,28 +34,23 @@
         <?php echo $data['phone']; ?>
       </div>
   </div>
-
-    <div class="container">
-        <?php
-        for($i = 0; $i < count($data['opps']); $i++) {
-  ?>
-    <div class="row">
-      <div class="col-md-3 col-sm-12">
-        <div class="form-group">
-          <?php echo $data['opps'][$i]['date']; ?>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-12">
-        <div class="form-group">
-        <?php echo $data['opps'][$i]['title']; ?>
-        </div>
-      </div>
-      <div class="col-md-6 col-sm-12">
-        <div class="form-group">
-          <?php echo $data['opps'][$i]['description']; ?>
-        </div>
-      </div>
+  <form action="<?php echo CURRENT_URL; ?>" method="post">
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input type="text" name="name" id="name" value="<?php echo $_SESSION['name']; ?>" readonly>
     </div>
-  <?php }
-        ?>
+      <div class="form-group">
+        <label for="name">Your Email</label>
+        <input type="text" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" readonly>
+      </div>
+        <div class="form-group">
+          <label for="name">Subject</label>
+          <input type="text" name="subject" id="subject">
+        </div>
+        <div class="form-group">
+          <label for="name">Message</label>
+          <textarea type="text" name="message" id="message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
   <?php include('Views/footer.php'); ?>
