@@ -10,7 +10,6 @@ define('IS_LOGGED_IN', isset($_SESSION['id']) && isset($_SESSION['name']) && iss
 
 // Make CONSTANT_URL so it's easy for linking/reference purposes
 define('CURRENT_URL', $_SERVER['REQUEST_URI']);
-define('URL_BASE', empty($_REQUEST['u']) ? $_SERVER['REQUEST_URI'] : dirname($_SERVER['REQUEST_URI']));
 
 class CHController{
 
@@ -73,6 +72,11 @@ class CHController{
 
     return $details;
   }
+  public static function getDetailsOnOpportunity($id){
+      return CHController::getModel('organization')->select('SELECT * FROM volunteer_opportunities WHERE id = :id', array(':id' => $id));
+
+    return $details;
+  }
   public static function redirectPage($page){
     // Just a helper to redirect to the desired page
     header('Location: ' . URL_BASE . '/' . $page);
@@ -93,9 +97,11 @@ CHController::$db = new PDO("mysql:dbname=".$config["dbname"].";",$config["dbuse
 // Parse the requested route for dispatch
 $USER_REQUEST = $_REQUEST['u'];
 $USER_REQUEST_R = explode('/', $USER_REQUEST);
+define('URL_SECOND_PARAMETER', isset($USER_REQUEST_R[1]) ? $USER_REQUEST_R[1] : null);
 
 // See if controller is set otherwise fallback to home page
 $CONTROLLER = isset($USER_REQUEST_R[0]) && is_file('Controllers/' . $USER_REQUEST_R[0] . '.php') ? strtolower($USER_REQUEST_R[0]) : 'home';
+define('URL_BASE', empty($_REQUEST['u']) ? $_SERVER['REQUEST_URI'] : substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '/' . $USER_REQUEST_R[0])));
 
 // Call the controller
 require('Controllers/' . $CONTROLLER . '.php');

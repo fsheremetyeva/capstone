@@ -71,6 +71,11 @@ class organization{
       );
     $x = CHController::getModel('organization')->add('INSERT INTO volunteer_opportunities (title, date, description, organization_id) VALUES (:title, :date, :description, :organization_id)', $fields);
   }
+  public function search_opportunities($query)
+  {
+    $value[':query'] = '%' . $query . '%';
+    return $this->select('SELECT *, (SELECT name FROM organization WHERE id = volunteer_opportunities.organization_id LIMIT 1) AS organization FROM volunteer_opportunities WHERE title LIKE :query OR description LIKE :query OR organization_id IN (SELECT id FROM organization WHERE address LIKE :query OR zip LIKE :query OR description LIKE :query) ORDER BY id DESC', $value);
+  }
   public function getError(){
     return implode(' ', $this->db->errorInfo());
   }

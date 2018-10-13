@@ -3,8 +3,8 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Make an impact in your community</h1>
-    <form id="jumbotron-search" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    <form id="jumbotron-search" class="form-inline my-2 my-lg-0" method="post" action="<?php echo URL_BASE; ?>search">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
