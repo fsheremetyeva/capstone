@@ -1,5 +1,10 @@
 
 <?php include('Views/header.php'); ?>
+<section class="page-title">
+  <div class="container">
+    <h1>Account Settings</h1>
+  </div>
+</section>
   <div class="container">
 
     <form class="dashboard-form"  action="<?php echo CURRENT_URL; ?>" method="post">

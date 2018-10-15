@@ -2,6 +2,10 @@
 class CHController_settings{
 
   public function page($route){
+    if(!IS_LOGGED_IN)
+      CHController::redirectPage('home');
+
+      // Verify password information and then update it in the database
     if(isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['new_password'])){
       $data = CHController::getDetailsOnCurrentUser();
       if($data['password'] != sha1($_POST['password'])){
@@ -20,8 +24,7 @@ class CHController_settings{
       }
     }
 
-    $data['title'] = 'Hello!';
-    $data['body'] = 'Woohoo! Welcome To CH!';
+    // Allow easily updating user password
     CHController::viewHandler('settings', $data);
   }
 

@@ -57,4 +57,3 @@
     </nav>
 
     <main role="main">
-    <?php echo IS_LOGGED_IN ? $_SESSION['name'] : ''; ?>

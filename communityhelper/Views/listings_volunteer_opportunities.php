@@ -23,6 +23,7 @@
       <div class="form-group">
         <label class="sr-only" for="description">Description</label>
         <input type="text" name="description[]" id="description" placeholder="Description" value="<?php echo $data[$i]['description']; ?>">
+        <a href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>">Delete</a>
       </div>
     </div>
   </div>

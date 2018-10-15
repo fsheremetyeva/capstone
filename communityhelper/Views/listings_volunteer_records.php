@@ -5,8 +5,7 @@ $data = $data['records'];
 $labels = array();
 $dataset = array();
 $bg = array();
-foreach($graph as $g)
-{
+foreach($graph as $g){
   $labels[] = '"' . $g['organization'] . '"';
   $dataset[] = $g['time'];
   $bg[] = '\'rgba(' . rand(0, 255) . ', ' . rand(0, 255) . ', ' . rand(0, 255)  . ')\'';
@@ -77,6 +76,7 @@ var chart = new Chart(ctx, {
       <div class="form-group">
         <label class="sr-only" for="description">Notes</label>
         <input type="text" name="notes[]" id="notes" placeholder="Notes" value="<?php echo $data[$i]['notes']; ?>">
+        <a href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>">Delete</a>
       </div>
     </div>
   </div>

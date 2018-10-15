@@ -1,7 +1,11 @@
 
 <?php include('Views/header.php'); ?>
+<section class="page-title">
   <div class="container">
-    <?php echo '<p>Thanks for signing in, ' . $_SESSION['name'] . '.</p>'; ?>
+    <h1>Dashboard: <?php echo  $_SESSION['name'] ;?></h1>
+  </div>
+</section>
+  <div class="container">
     <form class="dashboard-form"  enctype="multipart/form-data" action="<?php echo CURRENT_URL; ?>" method="post">
       <div class="row">
         <div class="col-md-6 col-sm-12">
@@ -54,3 +58,6 @@
       <button type="submit" class="btn btn-primary">Update</button>
     </form>
   </div>
+<?php if(IS_VOLUNTEER) {
+  echo '<a href="' . URL_BASE . '/certificate">Get Certificate</a>';
+} ?>

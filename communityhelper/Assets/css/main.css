@@ -80,6 +80,16 @@ Colors
   color:#0E69AF;
 }
 /*
+Sections
+*/
+.page-title{
+	padding:1rem;
+	background:#E67D2E;
+}
+.page-title h1{
+font-size:30px;
+}
+/*
 Homepage
 */
 .jumbotron{
