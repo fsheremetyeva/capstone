@@ -18,4 +18,3 @@ This web application depends upon a "LAMP" stack for running. Or more specifical
 
  3. Depending upon your host's configuration, you may need to edit the database name
  and the SQL server username/password credentials. That can be done by editing `communityhelper/index.php` with the "config" options at the start of the file for dbname / dbuser / dbpass.
-
