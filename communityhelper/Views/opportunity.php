@@ -1,6 +1,7 @@
 
 <?php include('Views/header.php'); ?>
   <div class="container">
+
       <div class="row">
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
@@ -18,26 +19,32 @@
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <?php echo $data['description']; ?>
-            <?php echo '<p><a href="' . URL_BASE . '/contact_org/' . $data['id'] . '"><strong>Contact Organization</a></strong></p>';
+            <?php echo '<p><a href="' . URL_BASE . 'contact_org/' . $data['id'] . '"><strong>Contact Organization</a></strong></p>';
             ?>
           </div>
         </div>
       </div>
       <div class="form-group">
-        <?php echo $data['name']; ?>
+      <i class="fas fa-user-circle"></i> <?php echo $data['name']; ?>
       </div>
       <div class="form-group">
-        <?php echo $data['address']; ?>
+        <i class="fas fa-map-marker-alt"></i> <?php echo $data['address']; ?>
       </div>
       <div class="form-group">
-        <?php echo $data['zip']; ?>
+        <i class="fas fa-globe-asia"></i> <?php echo $data['zip']; ?>
       </div>
       <div class="form-group">
-        <?php echo $data['phone']; ?>
+        <i class="fas fa-phone"></i> <?php echo $data['phone']; ?>
       </div>
   </div>
 
     <div class="container">
+      <h2 class="primary">Volunteer Opportunities:</h2>
+      <div class="row">
+        <div class="col-md-3 col-sm-12 table-head">Days</div>
+        <div class="col-md-3 col-sm-12 table-head">Title</div>
+        <div class="col-md-6 col-sm-12 table-head">Description</div>
+      </div><br>
         <?php
         for($i = 0; $i < count($data['opps']); $i++) {
   ?>
@@ -58,6 +65,7 @@
         </div>
       </div>
     </div>
+    <hr>
   <?php }
         ?>
   <?php include('Views/footer.php'); ?>

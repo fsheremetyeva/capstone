@@ -34,8 +34,10 @@
         <?php echo $data['phone']; ?>
       </div>
   </div>
+  <div class="container">
   <form action="<?php echo CURRENT_URL; ?>" method="post">
     <div class="form-group">
+      <h2>Please fill out the form below and we will get touch with you shortly.</h2><br>
       <label for="name">Your Name</label>
       <input type="text" name="name" id="name" value="<?php echo $_SESSION['name']; ?>" readonly>
     </div>
@@ -53,4 +55,5 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
   <?php include('Views/footer.php'); ?>

@@ -12,16 +12,31 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
-        <a class="volunteer-cta" href="">
+        <a class="volunteer-cta" href="#volunteer-info">
           <h2> I am a volunteer</h2>
         </a>
       </div>
       <div class="col-md-6 col-sm-12">
-        <a class="nonprofit-cta" href="">
+        <a class="nonprofit-cta" href="#non-profit-info">
           <h2> I am a non-profit</h2>
         </a>
       </div>
     </div>
+      <div class="row info-section">
+        <div class="col-md-6 col-sm-12">
+          <h3 id="volunteer-info" class="accent">Volunteers are able to:</h3><br>
+          <p class="search-o">Find volunteers opportunuties in your comunity</p>
+          <p class="track-o">Keep track of your volunteer hours</p>
+          <p class="dashboard-o">See your volunteer progress and history. </p>
+          <p class="certificate-o">Get a certificate displaying volunteer work.</p><br>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <h3 id="non-profit-info" class="primary">Non-profits are able to:</h3><br>
+          <p class="broadcast-b">Broadcast volunteer opportunities</p>
+          <p class="application-b">Receive volunteer applications</p>
+          <p class="dashboard-b">Manage volunteer listings</p><br>
+        </div>
+      </div>
     <?php echo $data['body']; ?>
   </div>
 <?php include('Views/footer.php'); ?>
