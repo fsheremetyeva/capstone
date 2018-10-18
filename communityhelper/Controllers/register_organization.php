@@ -1,6 +1,5 @@
 <?
-class CHController_register_organization
-{
+class CHController_register_organization{
 
   public function page($route){
 
@@ -25,8 +24,7 @@ class CHController_register_organization
       // Create new user
       $fields = CHController::insertDataArrayFromPostForSQL($fields);
       $x = CHController::getModel('organization')->add('INSERT INTO organization (name, address, zip, email, phone, password) VALUES (:name, :address, :zip, :email, :phone, :password)', $fields);
-      if($x === -1)
-      {
+      if($x === -1){
         echo 'There was an error processing this form. Likely an account already exists for this email address.';
         return;
       }

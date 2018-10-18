@@ -1,4 +1,9 @@
 <?php include('Views/header.php'); ?>
+<section class="page-title">
+  <div class="container">
+    <h1>Login</h1>
+  </div>
+</section>
 <div class="container">
   <form action="<?php echo CURRENT_URL; ?>" method="post">
 
