@@ -1,16 +1,18 @@
 
-  <div class="container">
-    <div class="row">
+  <main class="container">
+    <br><h2 class="primary">Manage Volunteer Listings</h2>
+    <section class="row">
       <div class="col-md-3 col-sm-12 table-head">Days</div>
       <div class="col-md-3 col-sm-12 table-head">Title</div>
       <div class="col-md-5 col-sm-12 table-head">Description</div>
-    </div>
+      <div class="col-md-1 col-sm-12 table-head">Delete</div>
+    </section>
     <form class="listing-form"  enctype="multipart/form-data" action="<?php echo CURRENT_URL; ?>" method="post">
       <?php
       for($i = 0; $i < count($data); $i++) {
 ?>
 
-  <div class="row">
+  <section class="row">
     <div class="col-md-3 col-sm-12 table-cell">
       <div class="form-group">
         <label class="sr-only" for="days">Days:</label>
@@ -32,14 +34,14 @@
         </div>
         </div>
         <div class="col-md-1 col-sm-12">
-        <a class="delete-btn" href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>">Delete</a>
+        <a class="delete-btn" title="delete" role="button" href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>">Delete</a>
       </div>
 
-  </div>
+  </section>
 <?php }
       ?>
 
-      <div class="row">
+      <section class="row opporunity-table">
         <div class="col-md-3 col-sm-12 table-cell">
           <div class="form-group">
             <label class="sr-only" for="days">Days:</label>
@@ -60,8 +62,9 @@
             <input type="text" name="description[]" id="description" placeholder="Description" value="">
           </div>
         </div>
-      </div>
+      </section>
+      <br>
       <button type="submit" class="btn btn-primary">Add / Update</button>
     </form>
-  </div>
+  </main>
 <?php include('Views/footer.php'); ?>

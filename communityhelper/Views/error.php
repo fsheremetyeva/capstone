@@ -1,6 +1,6 @@
 
 <?php include('Views/header.php'); ?>
-  <div class="container">
+  <section class="container">
     <?php echo $data['body']; ?>
-  </div>
+  </section>
 <?php include('Views/footer.php'); ?>

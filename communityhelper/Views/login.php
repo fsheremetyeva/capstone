@@ -4,7 +4,7 @@
     <h1>Login</h1>
   </div>
 </section>
-<div class="container">
+<main class="container">
   <form action="<?php echo CURRENT_URL; ?>" method="post">
 
     <div class="form-group">
@@ -26,5 +26,5 @@
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</div>
+</main>
 <?php include('Views/footer.php'); ?>

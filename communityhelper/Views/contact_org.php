@@ -1,7 +1,12 @@
 
 <?php include('Views/header.php'); ?>
+<section class="page-title">
   <div class="container">
-      <div class="row">
+    <h1>Contact Us</h1>
+  </div>
+</section>
+  <main class="container user-info">
+      <section class="row">
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
             <label class="sr-only" for="image">Image</label>
@@ -17,43 +22,45 @@
         </div>
         <div class="col-md-6 col-sm-12">
           <div class="form-group">
+            <strong>About Us:</strong>
             <?php echo $data['description']; ?>
           </div>
         </div>
+      </section>
+      <div class="form-group">
+      <i class="fas fa-user-circle"></i>  <?php echo $data['name']; ?>
       </div>
       <div class="form-group">
-        <?php echo $data['name']; ?>
+        <i class="fas fa-map-marker-alt"></i><?php echo $data['address']; ?>
       </div>
       <div class="form-group">
-        <?php echo $data['address']; ?>
+      <i class="fas fa-globe-asia"></i>  <?php echo $data['zip']; ?>
       </div>
       <div class="form-group">
-        <?php echo $data['zip']; ?>
+      <i class="fas fa-phone"></i>  <?php echo $data['phone']; ?>
       </div>
+  </main>
+
+  <section class="container">
+    <form action="<?php echo CURRENT_URL; ?>" method="post" class="contact-form">
       <div class="form-group">
-        <?php echo $data['phone']; ?>
-      </div>
-  </div>
-  <div class="container">
-  <form action="<?php echo CURRENT_URL; ?>" method="post">
-    <div class="form-group">
-      <h2>Please fill out the form below and we will get touch with you shortly.</h2><br>
-      <label for="name">Your Name</label>
-      <input type="text" name="name" id="name" value="<?php echo $_SESSION['name']; ?>" readonly>
-    </div>
-      <div class="form-group">
-        <label for="name">Your Email</label>
-        <input type="text" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" readonly>
+        <h2 class="primary">Please fill out the form below and we will get touch with you shortly.</h2><br>
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" value="<?php echo $_SESSION['name']; ?>" readonly>
       </div>
         <div class="form-group">
-          <label for="name">Subject</label>
-          <input type="text" name="subject" id="subject">
+          <label for="name">Your Email</label>
+          <input type="text" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" readonly>
         </div>
-        <div class="form-group">
-          <label for="name">Message</label>
-          <textarea type="text" name="message" id="message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+          <div class="form-group">
+            <label for="name">Subject</label>
+            <input type="text" name="subject" id="subject">
+          </div>
+          <div class="form-group">
+            <label for="name">Message</label>
+            <textarea type="text" name="message" id="message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
   <?php include('Views/footer.php'); ?>

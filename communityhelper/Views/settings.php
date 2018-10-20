@@ -5,7 +5,7 @@
     <h1>Account Settings</h1>
   </div>
 </section>
-  <div class="container">
+  <main class="container">
 
     <form class="dashboard-form"  action="<?php echo CURRENT_URL; ?>" method="post">
 
@@ -23,5 +23,5 @@
       </div>
       <button type="submit" class="btn btn-primary">Update</button>
     </form>
-  </div>
+  </main>
 <?php include('Views/footer.php'); ?>

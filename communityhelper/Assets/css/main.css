@@ -1,4 +1,5 @@
 
+
 body {
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
 }
@@ -71,6 +72,9 @@ Buttons
   background-color: #E67D2E;
   border-color: #E67D2E;
 }
+.contact-button{
+	margin-top:20px;
+}
 /*
 Icons
 */
@@ -81,9 +85,24 @@ i.fas, i.fa, i.far {
 /*
 Forms
 */
+
 .listing-form input{
 	width:100%;
 	padding:10px;
+	border:none;
+	border-right:1px solid #ddd;
+	border-left:1px solid #ddd;
+}
+.listing-form select{
+	border:0;
+	margin-top:10px;
+
+}
+.listing-form .row{
+	border-bottom: 1px solid #ddd;
+}
+.listing-form .form-group{
+	margin-bottom:0;
 }
 input, textarea, select{
 	width:100%;
@@ -98,7 +117,17 @@ form{
 	width:90%;
 	margin-left:10px;
 }
-
+.contact-form input, .contact-form textarea{
+	padding: 15px;
+	border: 1px solid #ddd;
+}
+form.contact-form{
+	margin: 10px 10%;
+}
+.register-section input{
+	width:40px;
+	display:inline-block;
+}
 /*
 Colors
 */
@@ -117,10 +146,14 @@ Colors
 /*
 Sections
 */
+aside{
+	padding-top:30px;
+}
 .page-title{
 	padding:1rem;
 	background:#E67D2E;
 	margin-bottom:30px;
+	margin-top:0px;
 }
 .page-title h1{
 font-size:30px;
@@ -139,6 +172,9 @@ font-size:30px;
 	padding-left:0px;
 	padding-right:0px;
 }
+section{
+	margin:30px 0;
+}
 /*
 Homepage
 */
@@ -149,6 +185,7 @@ Homepage
   background-position: center;
   padding: 6rem 2rem;
   text-align:center;
+	margin-top:0;
 }
 #jumbotron-search input{
   width:50%;
@@ -253,6 +290,11 @@ color:#fff;
 }
 .info-section{
 	margin: 50px 0;
+}
+.user-info{
+	margin-bottom:30px;
+	padding-bottom:20px;
+	border-bottom: 1px solid #ddd;
 }
 /*
 Dashboard
