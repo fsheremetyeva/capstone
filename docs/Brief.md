@@ -24,4 +24,4 @@ Unlike other somewhat similar sites in this segment, the site is free to use by 
 
 ### Pitch
 
-[YouTube link](https://www.youtube.com/watch?v=ANRl7l7Abr0)
+[YouTube link](https://youtu.be/Lzzp_XAmVpE)
