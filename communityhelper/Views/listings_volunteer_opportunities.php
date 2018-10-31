@@ -1,13 +1,13 @@
 
   <main class="container">
-    <br><h2 class="primary">Manage Volunteer Listings</h2>
+    <br><h2 class="primary"><a name="manage"></a>Manage Volunteer Listings</h2>
     <section class="row">
       <div class="col-md-3 col-sm-12 table-head">Days</div>
       <div class="col-md-3 col-sm-12 table-head">Title</div>
       <div class="col-md-5 col-sm-12 table-head">Description</div>
       <div class="col-md-1 col-sm-12 table-head">Delete</div>
     </section>
-    <form class="listing-form"  enctype="multipart/form-data" action="<?php echo CURRENT_URL; ?>" method="post">
+    <form class="listing-form"  enctype="multipart/form-data" action="<?php echo CURRENT_URL; ?>#manage" method="post">
       <?php
       for($i = 0; $i < count($data); $i++) {
 ?>
@@ -34,7 +34,7 @@
         </div>
         </div>
         <div class="col-md-1 col-sm-12">
-        <a class="delete-btn" title="delete" role="button" href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>">Delete</a>
+        <a class="delete-btn" title="delete" role="button" href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>#manage">Delete</a>
       </div>
 
   </section>

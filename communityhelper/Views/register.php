@@ -66,7 +66,7 @@ function switchRegForm(show)
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" required minlength="6">
+      <input type="password" name="password" id="password" required minlength="6" onchange="password_check(this.value);">
       <p class="accent"><sup>Passwords must be at least 6 characters, a mix of numbers and letters, and at least one upper-case character.</sup></p>
     </div>
     <div class="form-group">

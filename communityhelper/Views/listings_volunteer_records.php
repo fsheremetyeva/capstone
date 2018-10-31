@@ -15,7 +15,7 @@ $dataset = implode(', ', $dataset);
 $bg = implode(', ', $bg);
 ?>
   <main class="container">
-    <br><h2 class="primary">Record Volunteer Hours</h2>
+    <br><h2 class="primary"><a name="record">Record Volunteer Hours</a></h2>
     <section class="row">
       <div class="col-md-2 col-sm-12 table-head">Date</div>
       <div class="col-md-3 col-sm-12 table-head">The Organizaton</div>
@@ -23,7 +23,7 @@ $bg = implode(', ', $bg);
       <div class="col-md-3 col-sm-12 table-head">Notes</div>
       <div class="col-md-1 col-sm-12 table-head">Delete</div>
     </section>
-    <form class="listing-form"  enctype="multipart/form-data" action="<?php echo CURRENT_URL; ?>" method="post">
+    <form class="listing-form"  enctype="multipart/form-data" action="<?php echo CURRENT_URL; ?>#record" method="post">
       <?php
       for($i = 0; $i < count($data); $i++) {
 ?>
@@ -59,7 +59,7 @@ $bg = implode(', ', $bg);
         </div>
       </div>
       <div class="col-md-1 col-sm-12">
-          <a class="delete-btn" title="delete" role="buton" href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>">Delete</a>
+          <a class="delete-btn" title="delete" role="buton" href="<?php echo CURRENT_URL; ?>/delete/<?php echo $data[$i]['id']; ?>#record">Delete</a>
         </div>
     </section>
 <?php }
