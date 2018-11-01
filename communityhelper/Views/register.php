@@ -1,4 +1,40 @@
 <?php include('Views/header.php'); ?>
+<script>
+//Form Validation
+function phone_check(val, errorTo){
+  document.getElementById(errorTo).innerHTML = '';
+  if(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(val) == false){
+    document.getElementById(errorTo).innerHTML = 'You must enter a valid phone number.';
+  }
+}
+function zip_check(val, errorTo)
+{
+  document.getElementById(errorTo).innerHTML = '';
+  if(val.length != 5){
+    document.getElementById(errorTo).innerHTML = 'Zip code must be five characters.';
+  }
+  if(/^\d+$/.test(val) == false){
+    document.getElementById(errorTo).innerHTML = 'Zip codes should only be made of numbers.';
+  }
+}
+function password_check(val, errorTo){
+  var issues = [];
+  if(val.length < 6){
+    issues.push("at least six characters");
+  }
+  if(/^[\x00-\x7F]*$/.test(val) == false || /\d/.test(val) == false){
+    issues.push("a mix of numbers and letters");
+  }
+  if(val.toLowerCase() == val){
+    issues.push("at least one upper-case character");
+  }
+  if(issues.length > 0)
+    document.getElementById(errorTo).innerHTML = 'Passwords must be ' + issues.join(", ");
+  else {
+    document.getElementById(errorTo).innerHTML = "";
+  }
+}
+</script>
 <section class="page-title">
   <div class="container">
     <h1>Register</h1>
@@ -33,12 +69,13 @@ function switchRegForm(show)
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" required minlength="6">
-      <p class="accent"><sup>Passwords must be at least 6 characters, a mix of numbers and letters, and at least one upper-case character.</sup></p>
+      <input type="password" name="password" id="password" required minlength="6" onchange="password_check(this.value, 'password_error_1');">
+      <p class="accent"><sup id="password_error_1">Passwords must be at least 6 characters, a mix of numbers and letters, and at least one upper-case character.</sup></p>
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input type="tel" name="phone" id="phone" minlength="10" maxlength="10" required>
+      <input type="tel" name="phone" id="phone" minlength="10" maxlength="10" required onchange="phone_check(this.value, 'phone_error_1');">
+      <p class="accent"><sup id="phone_error_1"></sup></p>
     </div>
     <div class="form-group">
       <label for="address">Address</label>
@@ -46,7 +83,8 @@ function switchRegForm(show)
     </div>
     <div class="form-group">
       <label for="zip">Zip Code</label>
-      <input type="tel" name="zip" id="zip" required minlength="5" maxlength="5">
+      <input type="tel" name="zip" id="zip" required minlength="5" maxlength="5" onchange="zip_check(this.value, 'zip_error_1');">
+      <p class="accent"><sup id="zip_error_1"></sup></p>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -66,12 +104,13 @@ function switchRegForm(show)
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="password" id="password" required minlength="6" onchange="password_check(this.value);">
-      <p class="accent"><sup>Passwords must be at least 6 characters, a mix of numbers and letters, and at least one upper-case character.</sup></p>
+      <input type="password" name="password" id="password" required minlength="6" onchange="password_check(this.value, 'password_error_2');">
+      <p class="accent"><sup id="password_error_2">Passwords must be at least 6 characters, a mix of numbers and letters, and at least one upper-case character.</sup></p>
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input type="tel" name="phone" id="phone" minlength="10" required>
+      <input type="tel" name="phone" id="phone" minlength="10" required onchange="phone_check(this.value, 'phone_error_2');">
+      <p class="accent"><sup id="phone_error_2"></sup></p>
     </div>
     <div class="form-group">
       <label for="association">Association</label>
@@ -79,7 +118,8 @@ function switchRegForm(show)
     </div>
     <div class="form-group">
       <label for="zip">Zip Code</label>
-      <input type="tel" name="zip" id="zip" required minlength="5" maxlength="5">
+      <input type="tel" name="zip" id="zip" required minlength="5" maxlength="5" onchange="zip_check(this.value, 'zip_error_2');">
+      <p class="accent"><sup id="zip_error_2"></sup></p>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
