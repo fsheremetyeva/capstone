@@ -1,0 +1,14 @@
+<?php
+
+// Edit this file and save it as config.php in the current directory to apply these changes
+
+// Database credentials
+
+// The MySQL database name
+$config['dbname'] = 'community';
+
+// The MySQL username
+$config['dbuser'] = 'root';
+
+// The MySQL password
+$config['dbpass'] = 'root';
