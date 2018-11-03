@@ -19,8 +19,7 @@ class CHController_login{
       }
 
       if(empty($x)){
-        echo 'UNKNOWN USERNAME OR PASSWORD';
-        exit;
+        CHController::userError('UNKNOWN USERNAME OR PASSWORD');
       }
       else if(isset($x[0]['name'])){
         // Valid user, proceed with setting up session authentication
@@ -29,7 +28,6 @@ class CHController_login{
         $_SESSION['name'] = $x[0]['name'];
         $_SESSION['zip'] = $x[0]['zip'];
         $_SESSION['type'] = $type;
-        //echo 'welcome back ' . $_SESSION['name'];
         CHController::redirectPage('dashboard');
       }
     }

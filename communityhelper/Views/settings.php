@@ -5,7 +5,7 @@
     <h1>Account Settings</h1>
   </div>
 </section>
-  <div class="container">
+  <main class="container">
 
     <form class="dashboard-form"  action="<?php echo CURRENT_URL; ?>" method="post">
 
@@ -15,13 +15,13 @@
       </div>
       <div class="form-group">
         <label class="sr-only" for="new-password">New Password</label>
-        <input type="password" name="new_password" id="new-password" placeholder="New Password" value="<?php echo $data['name']; ?>">
+        <input type="password" name="new_password" id="new-password" placeholder="New Password" value="<?php echo $data['name']; ?>" required minlength="6">
       </div>
       <div class="form-group">
         <label class="sr-only" for="confirm-password">Confirm Password</label>
-        <input type="password" name="confirm_password" id="confirm-password" placeholder="Confirm Password" value="<?php echo $data['name']; ?>">
+        <input type="password" name="confirm_password" id="confirm-password" placeholder="Confirm Password" value="<?php echo $data['name']; ?>" required minlength="6">
       </div>
       <button type="submit" class="btn btn-primary">Update</button>
     </form>
-  </div>
+  </main>
 <?php include('Views/footer.php'); ?>

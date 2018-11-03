@@ -16,24 +16,33 @@ class CHController_register_organization{
       if(empty($_POST[$field])){
 
           $skip_create = true;
-          echo $field . ' is empty.';
+          CHController::userError($field . ' is empty.');
           break;
+
       }
     }
-    if(!$skip_create){
+    if(($error = CHController::passwordStrong($_POST['password'])) !== true)
+    {
+      CHController::userError($error);
+      goto SHOW;
+
+    }
+    else if(!$skip_create){
       // Create new user
       $fields = CHController::insertDataArrayFromPostForSQL($fields);
       $x = CHController::getModel('organization')->add('INSERT INTO organization (name, address, zip, email, phone, password) VALUES (:name, :address, :zip, :email, :phone, :password)', $fields);
       if($x === -1){
-        echo 'There was an error processing this form. Likely an account already exists for this email address.';
-        return;
+        CHController::userError('There was an error processing this form. Likely an account already exists for this email address.');
+        goto SHOW;
       }
-      $data['username'] = $fields[':name'];
-      CHController::viewHandler('registration_complete', $data);
-
+      else {
+        $data['username'] = $fields[':name'];
+        CHController::viewHandler('registration_complete', $data);
+      }
     }
     else {
       // Not user creation, so just display HTML login form
+    SHOW:
     $data['title'] = 'Register Organization';
     CHController::viewHandler('registration_organization', $data);
     }

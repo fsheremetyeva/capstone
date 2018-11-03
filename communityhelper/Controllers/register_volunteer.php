@@ -15,24 +15,31 @@ class CHController_register_volunteer{
       if(empty($_POST[$field])){
 
           $skip_create = true;
-          echo $field . ' is empty.';
+          CHController::userError($field . ' is empty.');
           break;
       }
     }
-
-    if(!$skip_create){
+    if(($error = CHController::passwordStrong($_POST['password'])) !== true)
+    {
+      CHController::userError($error);
+      goto SHOW;
+    }
+    else if(!$skip_create){
       // Create new user
       $fields = CHController::insertDataArrayFromPostForSQL($fields);
       $x = CHController::getModel('volunteer')->add('INSERT INTO volunteer (name, association, zip, email, phone, password) VALUES (:name, :association, :zip, :email, :phone, :password)', $fields);
       if($x === -1){
-        echo 'There was an error processing this form. Likely an account already exists for this email address.';
-        return;
+        CHController::userError('There was an error processing this form. Likely an account already exists for this email address.');
+        goto SHOW;
       }
+      else {
       $data['username'] = $fields[':name'];
       CHController::viewHandler('registration_complete', $data);
+      }
     }
     else {
     // Just show new user form
+    SHOW:
     $data['title'] = 'Register Volunteer';
     CHController::viewHandler('registration_volunteer', $data);
     }

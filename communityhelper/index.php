@@ -24,6 +24,35 @@ class CHController{
   public static function viewHandler($view, $data = array()){
     include('Views/' . $view . '.php');
   }
+  public static function passwordStrong($pw){
+    // return true if the password string meets our set requirements
+    if(strlen($pw) < 6){
+      return "The password must be at least six characters.";
+    }
+
+    $contains_uppercase = false;
+    $contains_number = false;
+    for($i = 0; $i < strlen($pw); $i++){
+      if(is_numeric($pw[$i])){
+        $contains_number = true;
+      }
+      else if(strtoupper($pw[$i]) == $pw[$i]){
+        $contains_uppercase = true;
+      }
+    }
+
+    if($contains_uppercase == false){
+      return "The password must contain an uppercase character.";
+    }
+    else if($contains_number == false){
+      return "The password must contain a number.";
+    }
+
+    return true;
+  }
+  public static function userError($err){
+    echo '<script> alert("' . ucwords($err) . '"); </script>';
+  }
   public static function insertDataArrayFromPostForSQL($v){
     // Reformat the array of $_POST values to check and then reformat for easy passing to PDO data
     $newArray = array();
@@ -90,7 +119,7 @@ class CHController{
   }
   public static function redirectPage($page){
     // Just a helper to redirect to the desired page
-    header('Location: ' . URL_BASE . '/' . $page);
+    header('Location: ' . URL_BASE . $page);
   }
   public static function getModel($model){
     // Load the model
@@ -113,7 +142,8 @@ define('URL_THIRD_PARAMETER', isset($USER_REQUEST_R[2]) ? $USER_REQUEST_R[2] : n
 
 // See if controller is set otherwise fallback to home page
 $CONTROLLER = isset($USER_REQUEST_R[0]) && is_file('Controllers/' . $USER_REQUEST_R[0] . '.php') ? strtolower($USER_REQUEST_R[0]) : 'home';
-define('URL_BASE', empty($_REQUEST['u']) ? $_SERVER['REQUEST_URI'] : substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '/' . $USER_REQUEST_R[0])));
+$url_base = empty($_REQUEST['u']) ? $_SERVER['REQUEST_URI'] : substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], '/' . $USER_REQUEST_R[0]));
+define('URL_BASE', substr($url_base, -1) == '/' ? $url_base : $url_base . '/');
 
 // Call the controller
 require('Controllers/' . $CONTROLLER . '.php');

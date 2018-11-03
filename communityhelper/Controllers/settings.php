@@ -9,10 +9,14 @@ class CHController_settings{
     if(isset($_POST['password']) && isset($_POST['confirm_password']) && isset($_POST['new_password'])){
       $data = CHController::getDetailsOnCurrentUser();
       if($data['password'] != sha1($_POST['password'])){
-        echo 'Current password does not match!';
+        CHController::userError('Current password does not match!');
       }
       else if($_POST['confirm_password'] != $_POST['new_password']){
-        echo 'New password and the confirmation password do not match!';
+        CHController::userError('New password and the confirmation password do not match!');
+      }
+      else if(($error = CHController::passwordStrong($_POST['confirm_password'])) !== true)
+      {
+        CHController::userError($error);
       }
       else {
         echo 'Password updated';

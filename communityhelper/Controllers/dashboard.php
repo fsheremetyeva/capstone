@@ -17,8 +17,7 @@ class CHController_dashboard{
     }
 
     // Delete handling for volunter records or volunteer opportunities
-    if(URL_SECOND_PARAMETER == 'delete')
-    {
+    if(URL_SECOND_PARAMETER == 'delete'){
       if(IS_ORGANIZATION)
         CHController::getModel('organization')->delete_opportunity($_SESSION['id'], URL_THIRD_PARAMETER);
         else {
@@ -57,8 +56,14 @@ class CHController_dashboard{
         }
 
     }
-
     $data = CHController::getDetailsOnCurrentUser();
+
+    if(IS_VOLUNTEER){
+      $data['records'] = CHController::getModel('volunteer')->select('SELECT * FROM volunteer_records WHERE name_id = :id', array(':id' => $_SESSION['id']));
+      $data['graph'] = CHController::getModel('volunteer')->select('SELECT (SELECT name FROM organization WHERE id = volunteer_records.organization_id LIMIT 1) AS organization, SUM(duration) AS time FROM volunteer_records WHERE name_id = :name_id GROUP BY organization_id', array(':name_id' => $_SESSION['id']));
+      $data['organizations'] = CHController::getModel('organization')->select('SELECT id, name FROM organization ORDER BY name ASC', array());
+
+    }
     CHController::viewHandler('dashboard', $data);
 
     if(IS_ORGANIZATION){

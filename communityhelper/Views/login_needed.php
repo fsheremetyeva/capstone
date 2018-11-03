@@ -1,4 +1,7 @@
 
 <?php include('Views/header.php'); ?>
-You need to login to see this page. <a href="<?php echo URL_BASE; ?>/login">Login now</a>.
+<section class="container">
+  <p>You need to login to see this page. <a title="login" href="<?php echo URL_BASE; ?>login">Login now</a>.</p>
+  <p>Or if you don't have an account yet, please <a title="register" href="<?php echo URL_BASE; ?>register">Rester Now</a></p>
+<section>
 <?php include('Views/footer.php'); ?>
