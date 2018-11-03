@@ -4,7 +4,8 @@
 
 ### Initial Pitch
 
-- [Presentation Video](https://www.youtube.com/watch?v=ANRl7l7Abr0)
+- [Initial Pitch](https://www.youtube.com/watch?v=ANRl7l7Abr0)
+- [Updated Pitch](https://youtu.be/Lzzp_XAmVpE)
 - [Presentation File](SheremetyevaFatima_Pitch_Presentation.key)
 
 ### Initial Project Spec
@@ -25,12 +26,12 @@
 
 ### Alpha Release
 
-''Date of the Alpha Release Milestone. Once completed this should be updated with the proper link.''
+''Nov 1.''
 
 ### Beta Release
 
-''Date of the Beta Release Milestone. Once completed this should be updated with the proper link.''
+''Nov 8.''
 
 ### Public Release
 
-''Date of the Public Release Milestone. Once completed this should be updated with the proper link.''
+''Nov 15.''

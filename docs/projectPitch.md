@@ -23,7 +23,7 @@ MySQL database, PHP, PHP: GD Library, JavaScript, Twitter/Facebook API, Bootstra
 
 ### Target Audience
 
-- Age: 15 - 100
+- High School Students. Age 14 - 18
 - Any income level
 - Love for volunteer work
 - Not-for-profits
