@@ -16,5 +16,19 @@ This web application depends upon a "LAMP" stack for running. Or more specifical
  2. Included at `database/community.sql` is a MySQL dump of the test database. You must import this to your running MySQL/MariaDB server instance via phpMyAdmin, the MySQL command line, or related
  import methods.
 
- 3. Depending upon your host's configuration, you may need to edit the database name
- and the SQL server username/password credentials. That can be done by editing `communityhelper/index.php` with the "config" options at the start of the file for dbname / dbuser / dbpass.
+ 3. The MySQL user credentials and database name configuration are stored in the `config.php.default` file. Modify the MySQL credentials and re-save the file as `config.php` to apply the changes.
+
+### Server deployment instructions
+
+ This web application depends upon a "LAMP" stack for running. Or more specifically, a
+  web server with [PHP](https://php.net/) support as well as a [MySQL](https://mysql.com/) / [MariaDB](https://mariadb.org/) database server.  If running on macOS, [MAMP](https://www.mamp.info/en/) provides an easy and compatible Apache / MySQL / PHP stack.
+
+Any LAMP server is fine such as DigitalOcean, shared Linux web hosting plans, etc. The steps for setting up this web application on a server are as follows:
+
+  1. Upload the entire contents of the `communityhelper` folder within the root directory of the Git repository to your public_html folder on your web server. Depending upon your web server the folder name might be slightly different but just needs to be the directory that is web (HTTP) accessible.
+
+  2. Included at `database/community.sql` is a MySQL dump of the test database. You must import this to your running MySQL/MariaDB server instance via phpMyAdmin, the MySQL command line, or any utilities offered by the hosting provider.
+
+  3. The MySQL user credentials and database name configuration are stored in the `config.php.default` file. Modify the MySQL credentials and re-save the file as `config.php` to apply the changes.
+
+  4. Navigate to your cloud/server http://IP-ADDRESS/communityhelper/ and the website should now be working.
