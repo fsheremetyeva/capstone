@@ -28,7 +28,14 @@ class CHController_login{
         $_SESSION['name'] = $x[0]['name'];
         $_SESSION['zip'] = $x[0]['zip'];
         $_SESSION['type'] = $type;
-        CHController::redirectPage('dashboard');
+
+        if(isset($_SESSION['loginTarget'])) {
+          header('Location: ' . $_SESSION['loginTarget']);
+          unset($_SESSION['loginTarget']);
+        }
+        else {
+          CHController::redirectPage('dashboard');
+        }
       }
     }
     $data['title'] = 'Login';
