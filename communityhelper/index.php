@@ -1,4 +1,7 @@
 <?php
+
+// Database credentials
+
 require('config.php');
 
 session_start();
