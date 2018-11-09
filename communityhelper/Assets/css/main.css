@@ -85,7 +85,12 @@ i.fas, i.fa, i.far {
 /*
 Forms
 */
+.form-control::placeholder {
 
+    color: #222;
+    opacity: 1;
+
+}
 .listing-form input{
 	width:100%;
 	padding:10px;

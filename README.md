@@ -32,3 +32,12 @@ Any LAMP server is fine such as DigitalOcean, shared Linux web hosting plans, et
   3. The MySQL user credentials and database name configuration are stored in the `config.php.default` file. Modify the MySQL credentials and re-save the file as `config.php` to apply the changes.
 
   4. Navigate to your cloud/server http://IP-ADDRESS/communityhelper/ and the website should now be working.
+
+### Automation ###
+
+The automated deployment of GitHub updates to the test/production server is handled via GitHub web hooks with [Git-Deploy](https://github.com/vicenteguerra/git-deploy). Git-Deploy is a nice PHP based solution I discovered when researching deployment strategies and was quite simple to understand its code/design.
+
+Git-Deploy is placed on the server and has a basic configuration file for specifying the Git URL, desired branch, and other parameters. These parameters are nicely documented by the project's [README](https://github.com/vicenteguerra/git-deploy/blob/master/README.md).
+
+After configuring Git-Deploy, it had to be setup from the GitHub web hooks page to make a request to the URL of the `deploy.php` file for initiating the update process on commits. From there when making new commits to the respected branch, it updates on the server.
+

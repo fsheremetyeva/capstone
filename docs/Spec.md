@@ -25,7 +25,6 @@
 - Dashboard for volunteer account
   A user is able to add/edit and delete information:
 
-  - [ ] Update email
   - [ ] Update Password
   - [ ] Add/Modify/Remove Capabilities
   - [ ] Add new contact information
@@ -67,7 +66,10 @@
 - Registration page
 - Student Dashboard
 - Non-profit organization Dashboard
+- Settings page
 - Search page
+- Opportunity Details / Contact Organization
+
 
 ### Interface
 
@@ -94,7 +96,6 @@
 
   - Add/Edit/Delete personal information:
     - Name
-    - Email
     - Zip code
     - Association
     - Image
@@ -102,7 +103,7 @@
   - Add a new volunteer record:
     - Date
     - Organization Name
-    - Time
+    - Time(Duration)
     - Notes
 
   - View volunteer history
@@ -112,13 +113,17 @@
 
 - Non-profit organization Dashboard
 
-  - Add/Edit Volunteer Opportunity
+  - Add/Edit/Delete organizaiton information:
     - Name
-    - Location
-    - Date(s)
-    - Times
+    - Address
+    - Zip code
     - Description
-    - Images
+    - Image
+
+  - Add/Edit Volunteer Opportunity
+    - Title
+    - Date/Time
+    - Description
 
   - Delete Opportunity
 
@@ -128,7 +133,15 @@
     - Image
     - Organization Name
     - Excerpt of the volunteer Opportunity
+    - Date/Time
     - "Learn More" button
+
+- Opportunity Details / Contact Organization
+    - Organization name
+    - Image
+    - Description
+    - All available opportunities
+    - Contact button
 
 ### Browser Support
 
@@ -160,12 +173,16 @@ A web server like Apache or nginx is required for handling the HTTP(S) traffic.
 
 ### Integrations
 
-[Echarts](https://ecomfe.github.io/echarts-doc/public/en/api.html#echarts)
+[Chart.js](http://www.chartjs.org/) is used for generating a pie chart of the time use spends volunteering for different organizations.
+
+[FPDF](http://fpdf.org/) is used to generate a certificate showing the time and organizations the user volunteered for.
 
 ### Deployment Workflow
 
 Develop on feature branches, after testing and any verification/CI processes complete and pass, then merge to dev/master branches via pull requests.
 
+All releases will be deployed on DigitalOcean.
+
 ### Web Host
 
-I will be utilizing a spare web server I have access to, but given the low requirements of essentially a L.A.M.P. server, it should be easy for others to deploy whether being a server, cloud, or other environment meeting the above-mentioned technical requirements criteria.
+This website will be deployed using Linux / L.A.M.P. server.
