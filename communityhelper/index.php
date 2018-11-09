@@ -1,9 +1,7 @@
 <?php
 
 // Database credentials
-$config['dbname'] = 'community';
-$config['dbuser'] = 'root';
-$config['dbpass'] = 'root';
+require('config.php');
 
 session_start();
 
