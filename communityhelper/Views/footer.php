@@ -2,7 +2,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; <?php echo date('Y'); ?>Community Helper</p>
+        <p>&copy; <?php echo date('Y'); ?> Community Helper</p>
       </div>
     </footer>
 
