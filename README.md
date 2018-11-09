@@ -35,7 +35,7 @@ Any LAMP server is fine such as DigitalOcean, shared Linux web hosting plans, et
 
 ### Automation ###
 
-The automated deployment of GitHub updates to the test/production server is handled via GitHub web hooks with [Git-Deploy](https://github.com/vicenteguerra/git-deploy). Git-Deploy is a nice PHP based solution I discovered when researching deployment strategies.
+The automated deployment of GitHub updates to the test/production server is handled via GitHub web hooks with [Git-Deploy](https://github.com/vicenteguerra/git-deploy). Git-Deploy is a nice PHP based solution I discovered when researching deployment strategies and was quite simple to understand its code/design.
 
 Git-Deploy is placed on the server and has a basic configuration file for specifying the Git URL, desired branch, and other parameters. These parameters are nicely documented by the project's [README](https://github.com/vicenteguerra/git-deploy/blob/master/README.md).
 
