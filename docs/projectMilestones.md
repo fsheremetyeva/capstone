@@ -14,19 +14,15 @@
 
 ### MVP
 
-''Direct Link to the tagged release of your MVP on your repo.''
-
-> This should be a link to a specific commit.
+[MVP Release](https://github.com/fsheremetyeva/capstone/releases/tag/v0.9)
 
 ### Pivot
 
-''Direct Link to the tagged release of your Pivot on your repo.''
-
-> This should be a link to a specific commit.
+[Pivot Release](https://github.com/fsheremetyeva/capstone/tree/2.0.0-Release-Pivot)
 
 ### Alpha Release
 
-''Nov 1.''
+[Alpha Release](https://github.com/fsheremetyeva/capstone/tree/1.0.0-Release-Alpha)
 
 ### Beta Release
 

@@ -185,4 +185,4 @@ All releases will be deployed on DigitalOcean.
 
 ### Web Host
 
-This website will be deployed using DigitalOcean with a droplet (cloud) instance running a standard L.A.M.P. stack.
+This website will be deployed using Linux / L.A.M.P. server.
