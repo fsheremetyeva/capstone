@@ -2,7 +2,13 @@
 
 // Database credentials
 
-require('config.php');
+if(is_file('config.php'))
+	require('config.php');
+else if(is_file('../config.php'))
+	require('../config.php');
+else
+	echo "FAILED TO FIND CONFIG FILE";
+	exit;
 
 session_start();
 
