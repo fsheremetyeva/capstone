@@ -2,7 +2,7 @@
 
     <footer>
       <div class="container">
-        <p>&copy; Community Helper</p>
+        <p>&copy; Community Helper. Developed by Fatima.</p>
       </div>
     </footer>
 
