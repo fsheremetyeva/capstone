@@ -1,6 +1,7 @@
 <?php
 
 // Database credentials
+
 if(is_file('config.php'))
   require('config.php');
 else if(is_file('../config.php'))

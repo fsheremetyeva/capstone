@@ -181,8 +181,16 @@ A web server like Apache or nginx is required for handling the HTTP(S) traffic.
 
 Develop on feature branches, after testing and any verification/CI processes complete and pass, then merge to dev/master branches via pull requests.
 
-All releases will be deployed on DigitalOcean.
+### Automation
+
+The automated deployment of GitHub updates to the test/production server is handled via GitHub web hooks with [Git-Deploy](https://github.com/vicenteguerra/git-deploy). Git-Deploy is a nice PHP based solution I discovered when researching deployment strategies and was quite simple to understand its code/design.
+
+Git-Deploy is placed on the server and has a basic configuration file for specifying the Git URL, desired branch, and other parameters. These parameters are nicely documented by the project's [README](https://github.com/vicenteguerra/git-deploy/blob/master/README.md).
+
+After configuring Git-Deploy, it had to be setup from the GitHub web hooks page to make a request to the URL of the `deploy.php` file for initiating the update process on commits. From there when making new commits to the respected branch, it updates on the server.
+
+GitHub upon having new commits will automatically call the deploy script on that server. The git-deploy script will clone/pull the latest changes to the server so that it's immediately acc
 
 ### Web Host
 
-This website will be deployed using DigitalOcean with a droplet (cloud) instance running a standard L.A.M.P. stack.
+This website will be deployed using Linux / L.A.M.P. server.
