@@ -1,7 +1,14 @@
 <?php
 
 // Database credentials
-require('config.php');
+if(is_file('config.php'))
+  require('config.php');
+else if(is_file('../config.php'))
+    require('../config.php');
+else {
+  echo "No config file found!";
+  exit;
+}
 
 session_start();
 
