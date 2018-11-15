@@ -41,3 +41,4 @@ Git-Deploy is placed on the server and has a basic configuration file for specif
 
 After configuring Git-Deploy, it had to be setup from the GitHub web hooks page to make a request to the URL of the `deploy.php` file for initiating the update process on commits. From there when making new commits to the respected branch, it updates on the server.
 
+GitHub upon having new commits will automatically call the deploy script on that server. The git-deploy script will clone/pull the latest changes to the server so that it's immediately accessible.
