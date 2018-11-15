@@ -3,14 +3,14 @@
 // Database credentials
 
 if(is_file('config.php'))
-	require('config.php');
+  require('config.php');
 else if(is_file('../config.php'))
-	require('../config.php');
-else
-{
-	echo "FAILED TO FIND CONFIG FILE";
-	exit;
+    require('../config.php');
+else {
+  echo "No config file found!";
+  exit;
 }
+
 session_start();
 
 // Helper to indicate if anyone is logged in
